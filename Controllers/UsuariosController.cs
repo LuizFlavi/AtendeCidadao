@@ -18,7 +18,7 @@ namespace atendecidadao.Controllers
             _userService = service;
         }
 
-        [Authorize(Roles = "Administrador")]
+        //[Authorize(Roles = "Administrador")]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         public override async Task<ActionResult> GetAll(int page = 1, int pageSize = 10)
@@ -26,14 +26,14 @@ namespace atendecidadao.Controllers
             return await base.GetAll(page, pageSize);
         }
 
-        [Authorize]
+        //[Authorize]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public override async Task<ActionResult> GetById(int id)
         {
             return await base.GetById(id);
         }
 
-        [Authorize(Roles = "Administrador")]
+        //[Authorize(Roles = "Administrador")]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         public override async Task<ActionResult> Create([FromBody] Usuario entity)
@@ -43,7 +43,7 @@ namespace atendecidadao.Controllers
             return await base.Create(entity);
         }
 
-        [Authorize(Roles = "Administrador")]
+        //[Authorize(Roles = "Administrador")]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         public override async Task<ActionResult> Update(int id, [FromBody] Usuario entity)
@@ -52,7 +52,7 @@ namespace atendecidadao.Controllers
             return await base.Update(id, entity);
         }
 
-        [Authorize(Roles = "Administrador")]
+        //[Authorize(Roles = "Administrador")]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         public override async Task<ActionResult> Delete(int id)

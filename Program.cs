@@ -60,10 +60,16 @@ namespace atendecidadao
             });
 
             // ADICIONA OS SERVICOS
+            builder.Logging.ClearProviders();
+            builder.Logging.AddConsole();
+            builder.Logging.AddDebug();
             builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             builder.Services.AddScoped<IUsuarioService, UsuarioService>();
             builder.Services.AddScoped<ISolicitacaoRepository, SolicitacaoRepository>();
             builder.Services.AddScoped<ISolicitacaoService, SolicitacaoService>();
+            builder.Services.AddScoped<IAnexoRepository, AnexoRepository>();
+            builder.Services.AddScoped<IAnexoService, AnexoService>();
+
 
             var app = builder.Build();
 
@@ -88,4 +94,5 @@ namespace atendecidadao
             app.Run();
         }
     }
+    
 }

@@ -18,5 +18,7 @@ namespace atendecidadao.Data
         public DbSet<Usuario> Usuarios { get; set; }
 
         public DbSet<Solicitacao> Solicitacoes { get; set; }
+
+        public DbSet<Anexo> Anexos { get; set; }
     }
 }
